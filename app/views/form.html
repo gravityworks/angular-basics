@@ -19,14 +19,14 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="person in ctrl.contacts" ng-click="ctrl.onContactClick(person)">
-                        <th>{{ person.name }}</th>
-                        <th>{{ person.email }}</th>
-                        <th>{{ person.phone | tel }}</th>
-                        <th>{{ person.address1 }} {{ person.address2 }} {{ person.city }}, {{ person.state }} {{ person.zip }}</th>
-                        <th>{{ person.preferredContact }}</th>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.email }}</td>
+                        <td>{{ person.phone | tel }}</td>
+                        <td>{{ person.address1 }} {{ person.address2 }} {{ person.city }}, {{ person.state }} {{ person.zip }}</td>
+                        <td>{{ person.preferredContact }}</td>
                     </tr>
                     <tr ng-if="ctrl.contacts.length == 0">
-                        <th colspan="5">No Contacts :'(</th>
+                        <td colspan="5">No Contacts :'(</td>
                     </tr>
                 </tbody>
             </table>
@@ -38,7 +38,7 @@
         <div class="box-title">
             Contact
             <div class="pull-right">
-                <button class="btn btn-xs btn-success" ng-click=ctrl.addNewContact();">Save</button>
+                <button class="btn btn-xs btn-success" ng-click="ctrl.addNewContact()">Save</button>
                 <button class="btn btn-xs btn-danger" ng-click="ctrl.contact = null">Cancel</button>
             </div>
         </div>

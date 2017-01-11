@@ -30,6 +30,9 @@
         vm.onContactClick = function(row) {
             vm.contact = row;
         };
+
+        // Get all the contacts
+        vm.getAllContacts();
     }
 
 })();
