@@ -15,8 +15,10 @@ A basic setup for learning and playing with AngularJS
 - ngTouch
 - ngCookies
 - ui.router
+- ui.mask
 - Twitter-Bootstrap (3.x)
 - Font-Awesome
+- Lodash
 
 ### Getting Started
 
