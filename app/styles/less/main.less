@@ -39,13 +39,17 @@ body {
 .box {
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-  > .title {
-    font-weight: 600;
+  > .box-title {
+    font-weight: 200;
     border-bottom: 1px solid @border-color;
     padding: 10px;
     background-color: @title-background;
   }
-  > .body {
+  > .box-body {
     padding: 10px;
   }
+}
+
+.table-pointer tbody > tr {
+  cursor: pointer;
 }

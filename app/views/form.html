@@ -1,0 +1,103 @@
+<div class="" ng-class="{ 'col-md-6' : ctrl.contact, 'col-md-12' : ctrl.contact == null }">
+    <div class="box">
+        <div class="box-title">
+            Address Book
+            <div class="pull-right">
+                <button class="btn btn-xs btn-default" ng-click="ctrl.createNewContact()">Add a Contact</button>
+            </div>
+        </div>
+        <div class="box-body">
+            <table class="table table-striped table-bordered table-hover table-pointer">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Mailing Address</th>
+                        <th>Preferred Method of Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in ctrl.contacts" ng-click="ctrl.onContactClick(person)">
+                        <th>{{ person.name }}</th>
+                        <th>{{ person.email }}</th>
+                        <th>{{ person.phone | tel }}</th>
+                        <th>{{ person.address1 }} {{ person.address2 }} {{ person.city }}, {{ person.state }} {{ person.zip }}</th>
+                        <th>{{ person.preferredContact }}</th>
+                    </tr>
+                    <tr ng-if="ctrl.contacts.length == 0">
+                        <th colspan="5">No Contacts :'(</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-md-6" ng-if="ctrl.contact">
+    <div class="box">
+        <div class="box-title">
+            Contact
+            <div class="pull-right">
+                <button class="btn btn-xs btn-success" ng-click=ctrl.addNewContact();">Save</button>
+                <button class="btn btn-xs btn-danger" ng-click="ctrl.contact = null">Cancel</button>
+            </div>
+        </div>
+        <div class="box-body">
+            <ng-form name="" class="form-horizontal" novalidate>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Name</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="name" ng-model="ctrl.contact.name" required placeholder="Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Email</label>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" name="email" ng-model="ctrl.contact.email" required placeholder="Email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Phone</label>
+                    <div class="col-md-8">
+                        <input type="tel" class="form-control" name="phone" ng-model="ctrl.contact.phone" required ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Address 1</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="address1" ng-model="ctrl.contact.address1" required placeholder="Address" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Address 2</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="address2" ng-model="ctrl.contact.address2" placeholder="Address" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">City, State Zip</label>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="city" ng-model="ctrl.contact.city" required placeholder="City" />
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control" name="state" ng-model="ctrl.contact.state" required
+                                        ng-options="item.label for item in ctrl.states track by item.value"></select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" name="zip" ng-model="ctrl.contact.zip" required placeholder="Zip" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Preferred Contact Method</label>
+                    <div class="col-md-8">
+                        <select class="form-control" name="preferredMethod" ng-model="ctrl.contact.preferredMethod" required></select>
+                    </div>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+</div>

@@ -25,7 +25,9 @@
     "angular-cookies": "^1.6.1",
     "angular-resource": "^1.6.1",
     "angular-touch": "^1.6.1",
-    "angular-sanitize": "^1.6.1"
+    "angular-sanitize": "^1.6.1",
+    "angular-ui-mask": "^1.8.7",
+    "lodash": "^4.17.4"
   },
   "overrides": {
     "bootstrap": {

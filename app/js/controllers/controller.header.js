@@ -13,6 +13,10 @@
                 route : 'home',
                 label : 'Home',
                 icon : null
+            }, {
+                route : 'form',
+                label : 'Forms Example',
+                icon : 'fa fa-check-square-o'
             }
         ];
     }
