@@ -1,0 +1,44 @@
+{
+  "name": "AngularJS Meetup",
+  "authors": [
+    "Scott Engemann <scott.engemann@gravityworksdesign.com>"
+  ],
+  "description": "Some of the Angular Basics",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "ui-router#^0.3.2",
+    "jquery": "^3.1.1",
+    "components-font-awesome": "^4.7.0",
+    "angular-animate": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-touch": "^1.6.1",
+    "angular-sanitize": "^1.6.1"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "./dist/css/bootstrap.min.css",
+        "./dist/fonts/glyphicons-halflings-regular.ttf",
+        "./dist/js/bootstrap.min.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.min.css"
+      ]
+    }
+  }
+}

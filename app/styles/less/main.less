@@ -1,0 +1,51 @@
+// Variables
+@gw-teal: #037DAC;
+@gw-teal2: #038fc5;
+@gw-orange: #F0592B;
+
+@border-color: #D7D7D7;
+@title-background: #F8F8F8;
+
+body {
+  background-color : #F4F4F4;
+}
+
+.navbar {
+  border-radius: 0;
+  &.navbar-gravity {
+    background-color: @gw-teal;
+    .navbar-brand {
+      color: white;
+      i {
+        color: @gw-orange;
+      }
+    }
+    .navbar-nav > li {
+      &.active {
+        > a {
+          background-color: @gw-teal2;
+        }
+      }
+      > a {
+        color: white;
+        &:hover, &:focus, &:visited {
+          background-color: @gw-teal2;
+        }
+      }
+    }
+  }
+}
+
+.box {
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+  > .title {
+    font-weight: 600;
+    border-bottom: 1px solid @border-color;
+    padding: 10px;
+    background-color: @title-background;
+  }
+  > .body {
+    padding: 10px;
+  }
+}

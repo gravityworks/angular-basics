@@ -1,0 +1,39 @@
+body {
+  background-color: #F4F4F4;
+}
+.navbar {
+  border-radius: 0;
+}
+.navbar.navbar-gravity {
+  background-color: #037DAC;
+}
+.navbar.navbar-gravity .navbar-brand {
+  color: white;
+}
+.navbar.navbar-gravity .navbar-brand i {
+  color: #F0592B;
+}
+.navbar.navbar-gravity .navbar-nav > li.active > a {
+  background-color: #038fc5;
+}
+.navbar.navbar-gravity .navbar-nav > li > a {
+  color: white;
+}
+.navbar.navbar-gravity .navbar-nav > li > a:hover,
+.navbar.navbar-gravity .navbar-nav > li > a:focus,
+.navbar.navbar-gravity .navbar-nav > li > a:visited {
+  background-color: #038fc5;
+}
+.box {
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.box > .title {
+  font-weight: 600;
+  border-bottom: 1px solid #D7D7D7;
+  padding: 10px;
+  background-color: #F8F8F8;
+}
+.box > .body {
+  padding: 10px;
+}
