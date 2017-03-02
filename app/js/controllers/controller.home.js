@@ -6,6 +6,7 @@
 
     function homeController($log) {
         var vm = this;
+
         $log.info('::HomeController');
     }
 

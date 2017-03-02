@@ -16,19 +16,32 @@
         $log.info('::FormController');
 
         vm.createNewContact = function() {
-            vm.contact = {}
+            vm.contact = {
+                state : vm.states[0],
+                preferredMethod : vm.contactMethod[0]
+            };
         };
 
         vm.addNewContact = function() {
             //TODO: Store New Contact
+            vm.contact.preferredMethod = vm.contact.preferredMethod.value;
+            vm.contact.state = vm.contact.state.value;
+            $rootScope.contacts.push(vm.contact);
+            vm.contact = null;
         };
 
         vm.getAllContacts = function() {
             vm.contacts = $rootScope.contacts;
         };
 
+        vm.displayContactMethod = function(val) {
+            return _.find(vm.contactMethod, { value : val }).label;
+        };
+
         vm.onContactClick = function(row) {
-            vm.contact = row;
+            vm.contact = angular.copy(row);
+            vm.contact.state = _.find(vm.states, { value : row.state });
+            vm.contact.preferredMethod = _.find(vm.contactMethod, { value : row.preferredMethod });
         };
 
         // Get all the contacts

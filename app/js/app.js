@@ -4,7 +4,7 @@
     var myApp = angular.module('myApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', 'ui.router', 'ui.mask']);
 
     myApp.config(function ($stateProvider, $urlRouterProvider, $logProvider) {
-        $logProvider.debugEnabled(true);
+        $logProvider.debugEnabled(false);
         $urlRouterProvider.otherwise('/home');
         $stateProvider.state('home', {
             url : '/home',
@@ -15,6 +15,7 @@
             url : '/form',
             templateUrl : './views/form.html',
             controller : 'formCtrl as ctrl',
+
             data : { pageTitle : 'Form Example' }
         });
     }).constant('CONST', {
@@ -195,7 +196,7 @@
         return {
             restrict: 'A',
             require: '?ngModel',
-            link: function (scope, elem, attrs, ctrl) {
+            link : function (scope, elem, attrs, ctrl) {
                 if (!ctrl) return;
 
                 ctrl.$formatters.unshift(function (a) {
@@ -267,10 +268,20 @@
             city : 'Lansing',
             state : 'MI',
             zip : 48906,
-            preferredContact : 'email'
+            preferredMethod : 'email'
         };
 
-        $rootScope.contacts = [];
+        $rootScope.contacts = [{
+            name : 'Scott Engemann',
+            email : 'scott.engemann@gravityworksdesign.com',
+            phone : '6169149293',
+            address1 : '1780 Pinnacle Dr SW',
+            address2 : '',
+            city: 'Wyoming',
+            state : 'MI',
+            zip : 49519,
+            preferredMethod : 'smoke'
+        }];
 
         $rootScope.$on('$stageChangeStart', function(event, toState, toParams, fromState, fromParams) {
             $log.info('$stateChangeStart:', toState);
